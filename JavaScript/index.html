@@ -51,7 +51,7 @@
    
     <title>App Landing Page</title>
   <style>
-    /* Some basic styling for demonstration purposes */
+    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -118,15 +118,15 @@
       var optionsContainer = document.createElement('div');
       optionsContainer.className = 'options';
 
-      var option1 = createOption('Option 1');
-      var option2 = createOption('Option 2');
-      var option3 = createOption('Option 3');
-      var option4 = createOption('Option 4');
+      var option1 = createOption('Employment');
+      var option2 = createOption('Internship');
+      var option3 = createOption('Pabau');
+      var option4 = createOption('Career');
 
-      optionsContainer.appendChild(option1);
-      optionsContainer.appendChild(option2);
-      optionsContainer.appendChild(option3);
-      optionsContainer.appendChild(option4);
+      optionsContainer.appendChild(Employment);
+      optionsContainer.appendChild(Internship);
+      optionsContainer.appendChild(Pabau);
+      optionsContainer.appendChild(Career);
 
       mainElement.appendChild(optionsContainer);
     }
@@ -149,10 +149,10 @@
   </header>
   <main id="main">
     <div class="options">
-      <div class="option" onclick="selectOption('Option 1')">Option 1</div>
-      <div class="option" onclick="selectOption('Option 2')">Option 2</div>
-      <div class="option" onclick="selectOption('Option 3')">Option 3</div>
-      <div class="option" onclick="selectOption('Option 4')">Option 4</div>
+      <div class="option" onclick="selectOption('Employment')">Employment</div>
+      <div class="option" onclick="selectOption('Internship')">Internship</div>
+      <div class="option" onclick="selectOption('Pabau')">Pabau</div>
+      <div class="option" onclick="selectOption('Career')">Career</div>
     </div>
   </main>
   <footer>
