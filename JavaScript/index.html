@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Form</title>
+    <script>
+        function shuffleValues() {
+            var checkboxesContainer = document.getElementById('checkboxes-container');
+            var checkboxes = checkboxesContainer.getElementsByTagName('input');
+            var checkboxArray = Array.from(checkboxes);
+            checkboxArray.sort(function() {
+                return 0.5 - Math.random();
+            });
+            checkboxArray.forEach(function(checkbox) {
+                checkboxesContainer.appendChild(checkbox);
+            });
+        }
+
+        function changeValues() {
+            var checkboxes = document.getElementsByName('checkbox');
+            var newValues = ['Career', 'Employment', 'Pabau', 'Internship'];
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].value = newValues[i];
+            }
+        }
+
+        function showSelectedValues() {
+            var checkboxes = document.getElementsByName('checkbox');
+            var selectedValues = [];
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    selectedValues.push(checkboxes[i].value);
+                }
+            }
+            var resultDiv = document.getElementById('result');
+            resultDiv.innerText = 'Selected values: ' + selectedValues.join(', ');
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <div id="checkboxes-container">
+            <input type="checkbox" name="checkbox" value="Internship"> Internship<br>
+            <input type="checkbox" name="checkbox" value="Pabau"> Pabau<br>
+            <input type="checkbox" name="checkbox" value="Employment"> Employment<br>
+            <input type="checkbox" name="checkbox" value="Career"> Career<br><br>
+        </div>
+        <button type="button" onclick="shuffleValues()">Shuffle Values</button>
+        <button type="button" onclick="changeValues()">Change Values</button>
+        <button type="button" onclick="showSelectedValues()">Show Selected Values</button>
+        <div id="result"></div>
+   
+    <title>App Landing Page</title>
+  <style>
+    /* Some basic styling for demonstration purposes */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+    }
+    main {
+      padding: 20px;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .option {
+      width: 25%;
+      padding: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .selected {
+      background-color: #f1f1f1;
+    }
+  </style>
+  <script>
+    function selectOption(option) {
+      var stepElement = document.getElementById('step');
+      var mainElement = document.getElementById('main');
+      var selectedOptionElement = document.getElementById('selectedOption');
+      stepElement.textContent = '2/2';
+
+      mainElement.innerHTML = '';
+      selectedOptionElement.textContent = option;
+
+      var backButton = document.createElement('button');
+      backButton.textContent = 'Back';
+      backButton.addEventListener('click', goBack);
+
+      mainElement.appendChild(selectedOptionElement);
+      mainElement.appendChild(backButton);
+    }
+
+    function goBack() {
+      var stepElement = document.getElementById('step');
+      var mainElement = document.getElementById('main');
+
+      stepElement.textContent = '1/2';
+
+      mainElement.innerHTML = '';
+
+      var optionsContainer = document.createElement('div');
+      optionsContainer.className = 'options';
+
+      var option1 = createOption('Option 1');
+      var option2 = createOption('Option 2');
+      var option3 = createOption('Option 3');
+      var option4 = createOption('Option 4');
+
+      optionsContainer.appendChild(option1);
+      optionsContainer.appendChild(option2);
+      optionsContainer.appendChild(option3);
+      optionsContainer.appendChild(option4);
+
+      mainElement.appendChild(optionsContainer);
+    }
+
+    function createOption(optionText) {
+      var option = document.createElement('div');
+      option.className = 'option';
+      option.textContent = optionText;
+      option.addEventListener('click', function() {
+        selectOption(optionText);
+      });
+      return option;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>App</h1>
+    <p id="step">1/2</p>
+  </header>
+  <main id="main">
+    <div class="options">
+      <div class="option" onclick="selectOption('Option 1')">Option 1</div>
+      <div class="option" onclick="selectOption('Option 2')">Option 2</div>
+      <div class="option" onclick="selectOption('Option 3')">Option 3</div>
+      <div class="option" onclick="selectOption('Option 4')">Option 4</div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2023 App
+  </footer>
+    
+    
+    
+    
+    
+    </form>
+</body>
+</html>
