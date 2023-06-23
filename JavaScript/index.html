@@ -15,6 +15,13 @@
             });
         }
 
+        window.onload = function() {
+            var form = document.getElementById('checkboxes-container');
+            var shuffleButton = document.getElementById('shuffleButton');
+
+            shuffleButton.addEventListener('click', shuffleValues);
+        };
+
         function changeValues() {
             var checkboxes = document.getElementsByName('checkbox');
             var newValues = ['Career', 'Employment', 'Pabau', 'Internship'];
@@ -44,7 +51,7 @@
             <input type="checkbox" name="checkbox" value="Employment"> Employment<br>
             <input type="checkbox" name="checkbox" value="Career"> Career<br><br>
         </div>
-        <button type="button" onclick="shuffleValues()">Shuffle Values</button>
+        <button type="button" id="shuffleButton" onclick="shuffleValues()">Shuffle Values</button>
         <button type="button" onclick="changeValues()">Change Values</button>
         <button type="button" onclick="showSelectedValues()">Show Selected Values</button>
         <div id="result"></div>
